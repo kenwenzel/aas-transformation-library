@@ -3,10 +3,9 @@
 
   SPDX-License-Identifier: Apache-2.0 
  */
-package com.sap.dsc.aas.lib.aml.config.pojo;
+package com.sap.dsc.aas.lib.aml.config.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sap.dsc.aas.lib.aml.config.model.Config;
 
 public abstract class AbstractConfig implements Config {
 

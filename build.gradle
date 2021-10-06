@@ -254,6 +254,7 @@ dependencies {
     def jaxen_version = "1.1.6"
     def aas_dataformat_json = "1.0.3"
     def aas_model_version = "1.0.3"
+    def komma_version = "1.5.2"
 
     implementation group: "com.google.guava", name: "guava", version: guava_version
     implementation group: "commons-cli", name: "commons-cli", version: commons_version
@@ -269,6 +270,7 @@ dependencies {
     implementation group: "jaxen", name: "jaxen", version: jaxen_version
     implementation group: 'io.admin-shell.aas', name: 'dataformat-json', version: aas_dataformat_json
     implementation group: 'io.admin-shell.aas', name: 'model', version: aas_model_version
+    implementation group: 'net.enilink.komma', name: 'net.enilink.composition', version: komma_version
     testImplementation group: "org.junit.jupiter", name: "junit-jupiter", version: junit_version
     testImplementation group: "org.junit.jupiter", name: "junit-jupiter-api", version: junit_version
     testImplementation group: "org.junit.jupiter", name: "junit-jupiter-engine", version: junit_version
