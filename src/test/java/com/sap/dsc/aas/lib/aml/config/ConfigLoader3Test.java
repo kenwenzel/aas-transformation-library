@@ -6,7 +6,6 @@
 package com.sap.dsc.aas.lib.aml.config;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.IOException;
 
@@ -16,9 +15,9 @@ import org.junit.jupiter.api.Test;
 import com.sap.dsc.aas.lib.aml.config.model.ConfigAmlToAas;
 import com.sap.dsc.aas.lib.aml.config.model.Mapping;
 
-public class ConfigLoader2Test {
+public class ConfigLoader3Test {
 
-    public static final String PATH_SIMPLE_CONFIG = "src/test/resources/config/simpleConfig2.json";
+    public static final String PATH_SIMPLE_CONFIG = "src/test/resources/config/simpleConfig3.json";
     private ConfigLoader2 classUnderTest;
 
     @BeforeEach

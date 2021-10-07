@@ -11,10 +11,9 @@ import io.adminshell.aas.v3.model.Submodel;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sap.dsc.aas.lib.aml.config.pojo.AbstractConfig;
 import com.sap.dsc.aas.lib.aml.config.pojo.ConfigIdGeneration;
 
-public class Mapping extends AbstractConfig {
+public class Mapping extends ConfigSupport {
 
     private String XPath;
     private AssetAdministrationShell configAssetShell;

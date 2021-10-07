@@ -17,11 +17,10 @@ import java.util.List;
 
 import com.sap.dsc.aas.lib.aml.exceptions.AlreadyDefinedException;
 
-public abstract class AbstractConfigFromAttribute extends AbstractConfig
+public abstract class ConfigFromAttributeSupport extends ConfigSupport
     implements ConfigFromAttribute, Behaviour<ConfigFromAttribute> {
 
     private String xPath, langXPath, valueXPath, minValueXPath, maxValueXPath, mimeTypeXPath;
-    private BindSpecification bindSpecification;
 
     @Override
     public String getXPath() {
@@ -70,16 +69,6 @@ public abstract class AbstractConfigFromAttribute extends AbstractConfig
         /*if (getSemanticId() != null) {
             throw new AlreadyDefinedException("semanticId_str");
         }*/
-    }
-
-    @Override
-    public BindSpecification getBindSpecification() {
-        return bindSpecification;
-    }
-
-    @Override
-    public void setBindSpecification(BindSpecification bindSpecification) {
-        this.bindSpecification = bindSpecification;
     }
 
     public String getLangXPath() {

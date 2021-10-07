@@ -7,7 +7,6 @@ package com.sap.dsc.aas.lib.aml.config.model;
 
 import io.adminshell.aas.v3.model.AssetInformation;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sap.dsc.aas.lib.aml.config.pojo.AbstractConfig;
 import com.sap.dsc.aas.lib.aml.config.pojo.ConfigIdGeneration;
 import com.sap.dsc.aas.lib.aml.config.pojo.ConfigReference;

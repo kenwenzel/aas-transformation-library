@@ -8,7 +8,7 @@ package com.sap.dsc.aas.lib.aml.config.pojo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sap.dsc.aas.lib.aml.config.model.Config;
 
-public abstract class AbstractConfig implements Config {
+public abstract class AbstractConfig {
 
     private String idShortXPath = "@Name";
     private String configElementId;

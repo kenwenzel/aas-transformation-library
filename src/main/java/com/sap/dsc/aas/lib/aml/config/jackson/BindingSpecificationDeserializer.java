@@ -24,7 +24,7 @@ public class BindingSpecificationDeserializer extends JsonDeserializer<BindSpeci
             // TODO add here logic to parse XPaths, BrowsePaths etc.
             String name = entry.getKey();
             JsonNode value = entry.getValue();
-            spec.setProperty(name, value.textValue());
+            spec.setBinding(name, value.textValue());
         });
         return spec;
     }

@@ -6,7 +6,6 @@
 package com.sap.dsc.aas.lib.aml.config.pojo;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.sap.dsc.aas.lib.aml.config.model.ConfigFromAttribute;
 import com.sap.dsc.aas.lib.aml.exceptions.AlreadyDefinedException;
 
 import io.adminshell.aas.v3.model.KeyElements;

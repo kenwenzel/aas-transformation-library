@@ -53,7 +53,7 @@ import com.google.inject.Key;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.sap.dsc.aas.lib.aml.config.jackson.BindingSpecificationDeserializer;
-import com.sap.dsc.aas.lib.aml.config.model.AbstractConfigFromAttribute;
+import com.sap.dsc.aas.lib.aml.config.model.ConfigFromAttributeSupport;
 import com.sap.dsc.aas.lib.aml.config.model.AssetInformationConfig;
 import com.sap.dsc.aas.lib.aml.config.model.BindSpecification;
 import com.sap.dsc.aas.lib.aml.config.model.ConfigAmlToAas;
@@ -168,7 +168,7 @@ public class ConfigLoader2 {
                 roleMapper.addConcept(info.getInterfaceType(), info.getInterfaceType().getName());
                 roleMapper.addBehaviour(info.getImplementationType(), info.getInterfaceType().getName());
                 // add config behaviours for this type
-                roleMapper.addBehaviour(AbstractConfigFromAttribute.class, info.getInterfaceType().getName());
+                roleMapper.addBehaviour(ConfigFromAttributeSupport.class, info.getInterfaceType().getName());
             });
 
         // register concepts

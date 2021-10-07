@@ -5,12 +5,17 @@
  */
 package com.sap.dsc.aas.lib.aml.config.model;
 
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public abstract class AbstractConfig implements Config {
+public abstract class ConfigSupport implements Config {
 
     private String idShortXPath = "@Name";
     private String configElementId;
+    private BindSpecification bindSpecification;
+    private Map<String, Object> variables;
+    private Map<String, Object> definitions;
 
     public String getIdShortXPath() {
         return idShortXPath;
@@ -34,4 +39,33 @@ public abstract class AbstractConfig implements Config {
         this.configElementId = configElementId;
     }
 
+    @Override
+    public BindSpecification getBindSpecification() {
+        return bindSpecification;
+    }
+
+    @Override
+    public void setBindSpecification(BindSpecification bindSpecification) {
+        this.bindSpecification = bindSpecification;
+    }
+
+    @Override
+    public Map<String, Object> getVariables() {
+        return variables;
+    }
+
+    @Override
+    public void setVariables(Map<String, Object> variables) {
+        this.variables = variables;
+    }
+
+    @Override
+    public Map<String, Object> getDefinitions() {
+        return definitions;
+    }
+
+    @Override
+    public void setDefinitions(Map<String, Object> definitions) {
+        this.definitions = definitions;
+    }
 }

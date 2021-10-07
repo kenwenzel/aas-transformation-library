@@ -17,11 +17,6 @@ public interface ConfigFromAttribute extends Config, HasSemantics {
     @JsonProperty("semanticId_str")
     void setSemanticIdFromString(String id);
 
-    BindSpecification getBindSpecification();
-
-    @JsonProperty("@bind")
-    void setBindSpecification(BindSpecification bindSpecification);
-
     String getIdShortXPath();
 
     @JsonProperty("idShort_xpath")

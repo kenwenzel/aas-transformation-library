@@ -3,18 +3,15 @@ package com.sap.dsc.aas.lib.aml.config.model;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-
 public class BindSpecification {
 
-    protected Map<String, Object> paths = new HashMap<>();
+    protected Map<String, Object> bindings = new HashMap<>();
 
-    public Map<String, Object> getProperties() {
-        return paths;
+    public Map<String, Object> getBindings() {
+        return bindings;
     }
 
-    @JsonAnySetter
-    public void setProperty(String key, Object value) {
-        paths.put(key, value);
+    public void setBinding(String key, Object value) {
+        bindings.put(key, value);
     }
 }
