@@ -21,6 +21,11 @@ public class Mapping extends ConfigSupport {
     private List<Submodel> submodels;
     private ConfigIdGeneration idGeneration;
 
+    public Mapping() {
+        super();
+        setTarget(this);
+    }
+
     public String getXPath() {
         return XPath;
     }

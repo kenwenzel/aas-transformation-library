@@ -4,21 +4,10 @@ import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Interface for the configuration of AAS model templates.
+ */
 public interface Config {
-	String getIdShortXPath();
-
-	@JsonProperty("idShort_xpath")
-	void setIdShortXPath(String idShortXPath);
-
-	/**
-	 * Returns an (optional) Id that can be used to refer to an element of the config
-	 *
-	 * @return The config element's Id
-	 */
-	String getConfigElementId();
-
-	void setConfigElementId(String configElementId);
-
 	BindSpecification getBindSpecification();
 
 	@JsonProperty("@bind")

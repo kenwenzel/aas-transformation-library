@@ -5,38 +5,35 @@
  */
 package com.sap.dsc.aas.lib.aml.config.model;
 
+import net.enilink.composition.traits.Behaviour;
 import java.util.Map;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public abstract class ConfigSupport implements Config {
+public class ConfigSupport implements Config {
 
-    private String idShortXPath = "@Name";
-    private String configElementId;
+    private Object target;
+
     private BindSpecification bindSpecification;
     private Map<String, Object> variables;
     private Map<String, Object> definitions;
 
-    public String getIdShortXPath() {
-        return idShortXPath;
+    public ConfigSupport() {
     }
 
-    @JsonProperty("idShort_xpath")
-    public void setIdShortXPath(String idShortXPath) {
-        this.idShortXPath = idShortXPath;
+    public ConfigSupport(Object target) {
+        this.target = target;
     }
 
-    /**
-     * Returns an (optional) Id that can be used to refer to an element of the config
-     *
-     * @return The config element's Id
-     */
-    public String getConfigElementId() {
-        return configElementId;
+    protected void setTarget(Object target) {
+        this.target = target;
     }
 
-    public void setConfigElementId(String configElementId) {
-        this.configElementId = configElementId;
+    protected Object getTarget() {
+        if (target == null && this instanceof Behaviour<?>) {
+            return ((Behaviour<?>) this).getBehaviourDelegate();
+        }
+        return target;
     }
 
     @Override

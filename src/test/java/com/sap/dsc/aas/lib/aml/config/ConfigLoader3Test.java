@@ -18,11 +18,11 @@ import com.sap.dsc.aas.lib.aml.config.model.Mapping;
 public class ConfigLoader3Test {
 
     public static final String PATH_SIMPLE_CONFIG = "src/test/resources/config/simpleConfig3.json";
-    private ConfigLoader2 classUnderTest;
+    private ConfigLoader3 classUnderTest;
 
     @BeforeEach
     void setup() {
-        classUnderTest = new ConfigLoader2();
+        classUnderTest = new ConfigLoader3();
     }
 
     @Test
