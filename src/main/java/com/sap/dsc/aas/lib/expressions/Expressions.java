@@ -24,6 +24,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import org.dom4j.Node;
+
 import com.google.common.hash.Hashing;
 
 public class Expressions {
@@ -129,14 +131,24 @@ public class Expressions {
 
         // special functions for ID generation
         functions.put("concatenate", args -> {
-            Stream<Object> stream = (Stream<Object>) valueToStream(args);
-            return stream.map(Object::toString).collect(Collectors.joining());
+            Stream<String> strStream = nodeListsToString ( valueToStream(args));
+            return strStream.collect(Collectors.joining());
         });
 		functions.put("concatenate_and_hash", args -> {
-			Stream<Object> stream = (Stream<Object>) valueToStream(args);
-			String concatenated = stream.map(Object::toString).collect(Collectors.joining());
+			Stream<String> strStream = nodeListsToString ( valueToStream(args));
+			String concatenated = strStream.collect(Collectors.joining());
 			return Hashing.sha256().hashString(concatenated, StandardCharsets.UTF_8).toString();
 		});
+    }
+
+    protected static Stream<String> nodeListsToString(Stream<?> stream) {
+        return stream.flatMap(o -> valueToStream(o)).map(o -> {
+            if (o instanceof Node) {
+                return ((Node) o).getStringValue();
+            } else {
+                return String.valueOf(o);
+            }
+        });
     }
 
     public static Function<Object, Object> getFunctionByName(String name) {
